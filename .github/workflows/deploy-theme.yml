@@ -24,5 +24,4 @@ jobs:
           # Password generated from Theme Access app
           SHOPIFY_CLI_THEME_TOKEN: '${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}'
           SHOPIFY_FLAG_ALLOW_LIVE: 1
-          SHOPIFY_FLAG_THEME_ID: '${{secrets.SHOPIFY_FLAG_THEME_ID}}'
-        run: shopify theme push --theme ${{ secrets.SHOPIFY_FLAG_ALLOW_LIVE }}
+        run: shopify theme push --theme ${{ secrets.SHOPIFY_FLAG_THEME_ID }}
