@@ -4,6 +4,8 @@
   },
   "scripts": {
     "dev": "npx tailwindcss -i ./src/styles/main.scss -o ./assets/main.css -w",
+    "watch": "npx tailwindcss -i ./src/styles/main.scss -o ./assets/main.css -w",
+    "shopify": "shopify theme dev --live-reload full-page --open -e develop",
     "build": "npx tailwindcss -i ./src/styles/main.scss -o ./assets/main.css"
   }
 }
