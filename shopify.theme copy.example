@@ -1,0 +1,4 @@
+[environments.develop]
+theme="THEME_ID"
+store="STORE_NAME"
+password="THEME_ACCESS_PASSWORD"
