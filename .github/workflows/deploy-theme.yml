@@ -14,14 +14,13 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.1
-          bundler: 'latest'
+          bundler: "latest"
       - name: Install Shopify CLI
         run: npm install -g @shopify/cli @shopify/theme
       - name: Deploy
         env:
           # Store URL, like your-store.myshopify.com
-          SHOPIFY_FLAG_STORE: '${{ secrets.SHOPIFY_STORE }}'
-          # Password generated from Theme Access app
-          SHOPIFY_CLI_THEME_TOKEN: '${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}'
-          SHOPIFY_FLAG_ALLOW_LIVE: 1
+          SHOPIFY_FLAG_STORE: "${{ secrets.SHOPIFY_STORE }}"
+          SHOPIFY_CLI_THEME_TOKEN: "${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}"
+          SHOPIFY_CLI_TTY: 0
         run: shopify theme push --theme ${{ secrets.SHOPIFY_FLAG_THEME_ID }}
