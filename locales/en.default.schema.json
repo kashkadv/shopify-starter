@@ -8,7 +8,12 @@
   },
   "sections": {
     "header": {
-      "name": "Header"
+      "name": "Header",
+      "settings": {
+        "logo": {
+          "label": "Logo"
+        }
+      }
     },
     "announcement-bar": {
       "name": "Announcement bar",
