@@ -1,0 +1,28 @@
+{
+  "settings_schema": {
+    "global": {
+      "settings": {
+
+      }
+    }
+  },
+  "sections": {
+    "announcement-bar": {
+      "name": "Announcement bar",
+      "settings": {},
+      "blocks": {
+        "announcement": {
+          "name": "Announcement",
+          "settings": {
+            "text": {
+              "label": "Text"
+            },
+            "link": {
+              "label": "Link"
+            }
+          }
+        }
+      }
+    }
+  }
+}
