@@ -1,79 +1,26 @@
-<html>
-<head>
-  	{{ content_for_header }}
-  	<title>{{ shop.name }} - {{ page_title }}</title>
-  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  	<title>untitled</title>
-	{{ 'main.css'  | asset_url | stylesheet_tag }}
-	{{ 'editor.css'  | asset_url | stylesheet_tag }}
-</head>
-
-<body>
-  <div id="wrapper">
-    <div id="header">
-	  <h1>{{ shop.name }}</h1>
-		<div id="top-nav">
-			<div class="menu"> 
-			<ul class="menu">
-		    	{% for link in linklists.main-menu.links %}
-			      <li class="menu-item"><a href="{{ link.url }}">{{ link.title }}</a></li>
-			    {% endfor %}
-			  </ul>
-			<div>
-		</div>
-		<div id="cart">
-			<h3>Shopping Cart</h3>
-			<p class="cart-count">
-				{% if cart.item_count == 0 %}
-					Your cart is currently empty
-				{% else %}
-					{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }} <span>-</span> Total: {{cart.total_price | money_with_currency }} <span>-</span> <a href="/cart">View Cart</a>
-				{% endif %}			
-			</p>
-		</div>
-
-    </div><!-- #header -->
-    <div class="content">
-			<div class="bg-red-200 rounded-sm shadow-sm w-1/2">
-				Tailwind block
-			</div>
-			<div class="bg-red-300 rounded-sm shadow-sm w-1/2">
-				Tailwind block 12
-			</div>
-			<div class="bg-red-400 rounded-sm shadow-sm w-1/2">
-				Tailwind block 3
-			</div>
-			<div class="bg-red-500 rounded-sm shadow-sm w-1/2">
-				Tailwind block 4
-			</div>
-			<div class="bg-red-600 rounded-sm shadow-sm w-1/2">
-				Tailwind block 5
-			</div>
-			<div class="bg-red-700 rounded-sm shadow-sm w-1/2">
-				Tailwind block 6
-			</div>
-			<div class="bg-red-800 rounded-sm shadow-sm w-1/2">
-				Tailwind block 7
-			</div>
-			<div class="bg-red-700 rounded-sm shadow-sm w-1/2">
-				Tailwind block 8
-			</div>
-			<div class="bg-red-600 rounded-sm shadow-sm w-1/2">
-				Tailwind block 9
-			</div>
-			<div class="bg-red-500 rounded-sm shadow-sm w-1/2">
-				Tailwind block 10
-			</div>
-			<div class="bg-blue-400 rounded-sm shadow-sm w-1/2">
-				Tailwind block 11
-			</div>
-			<div class="bg-blue-300 rounded-sm shadow-sm w-1/2">
-				Tailwind block 12
-			</div>
-      {{ content_for_layout }}
-    </div><!-- .content -->
-	&nbsp;
-  </div><!-- #wrapper -->
-&nbsp;
-</body>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		{{content_for_header}}
+		{{ 'main.css'  | asset_url | stylesheet_tag }}
+		{{ 'editor.css'  | asset_url | stylesheet_tag }}
+	</head>
+	<body>
+		{% sections 'header-group' %}
+		<header>
+			Logo 1
+			Navigation
+			Cart
+		</header>
+		<main>{{content_for_layout}}</main>
+		<footer>Footer</footer>
+		<pre>
+			{{ shop.logo }}
+			<img src="/{{ shop.brand.logo }}" alt="{{ shop.name }}">
+			{{ images[shop.logo] |  image_url: width: 200 |  image_tag }}
+		</pre>
+	</body>
 </html>
