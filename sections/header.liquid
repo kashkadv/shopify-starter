@@ -2,7 +2,7 @@
   <div class="flex flex-1">
     <div class="hidden lg:flex lg:gap-x-12">
     {% for link in linklists[section.settings.menu].links %}
-    <a href={{ link.url }} class="text-sm font-semibold leading-6 text-gray-900{% if link.active %} underline{% endif %}">{{ link.title }}</a>
+      <a href={{ link.url }} class="text-sm font-semibold leading-6 text-gray-900{% if link.active %} underline{% endif %}">{{ link.title }}</a>
     {% endfor %}
     </div>
     <div class="flex lg:hidden">
@@ -43,9 +43,9 @@
       </div>
     </div>
     <div class="mt-6 space-y-2">
-      <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Product</a>
-      <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
-      <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
+      {% for link in linklists[section.settings.menu].links %}
+        <a href={{ link.url }} class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50{% if link.active %} underline{% endif %}">{{ link.title }}</a>
+      {% endfor %}
     </div>
   </div>
 </div>
