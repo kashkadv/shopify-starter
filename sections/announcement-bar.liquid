@@ -1,10 +1,10 @@
 {% for block in section.blocks %}
   <div class="flex justify-center bg-neutral-800 px-6 py-2.5 sm:px-3.5">
     <p class="text-sm leading-6 text-white">
-      <strong class="font-semibold">{{ block.settings.heading }}</strong>
-      <svg viewBox="0 0 2 2" class="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true"><circle cx="1" cy="1" r="1" /></svg>
-      {{ block.settings.text }}
-      <svg viewBox="0 0 2 2" class="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true"><circle cx="1" cy="1" r="1" /></svg>
+      <strong class="font-semibold">{{ block.settings.heading }}</strong><!--
+      --><svg viewBox="0 0 2 2" class="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true"><circle cx="1" cy="1" r="1" /></svg><!--
+      -->{{ block.settings.text }}<!--
+      --><svg viewBox="0 0 2 2" class="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true"><circle cx="1" cy="1" r="1" /></svg>
     </p>
     <p class="text-sm leading-6 text-white">
       <a href="#"><strong class="font-semibold">{{ block.settings.link_label }}&nbsp;<span aria-hidden="true">&rarr;</span></strong></a>
@@ -15,7 +15,7 @@
 {% schema %}
   {
     "name": "t:sections.announcement-bar.name",
-    "max_blocks": 12,
+    "max_blocks": 1,
     "class": "announcement-bar-section",
     "enabled_on": {
       "groups": ["header"]
