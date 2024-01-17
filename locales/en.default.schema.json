@@ -7,6 +7,9 @@
     }
   },
   "sections": {
+    "header": {
+      "name": "Header"
+    },
     "announcement-bar": {
       "name": "Announcement bar",
       "settings": {},
@@ -14,11 +17,19 @@
         "announcement": {
           "name": "Announcement",
           "settings": {
+            "heading": {
+              "label": "Heading"
+            },
             "text": {
               "label": "Text"
             },
             "link": {
-              "label": "Link"
+              "url": {
+                "label": "Link url"
+              }, 
+              "label" : {
+                "label": "Link label"
+              }
             }
           }
         }

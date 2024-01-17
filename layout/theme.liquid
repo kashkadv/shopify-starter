@@ -17,10 +17,5 @@
 		</header>
 		<main>{{content_for_layout}}</main>
 		<footer>Footer</footer>
-		<pre>
-			{{ shop.logo }}
-			<img src="/{{ shop.brand.logo }}" alt="{{ shop.name }}">
-			{{ images[shop.logo] |  image_url: width: 200 |  image_tag }}
-		</pre>
 	</body>
 </html>

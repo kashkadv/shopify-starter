@@ -1,3 +1,17 @@
+{% for block in section.blocks %}
+  <div class="flex justify-center bg-neutral-800 px-6 py-2.5 sm:px-3.5">
+    <p class="text-sm leading-6 text-white">
+      <strong class="font-semibold">{{ block.settings.heading }}</strong>
+      <svg viewBox="0 0 2 2" class="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true"><circle cx="1" cy="1" r="1" /></svg>
+      {{ block.settings.text }}
+      <svg viewBox="0 0 2 2" class="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true"><circle cx="1" cy="1" r="1" /></svg>
+    </p>
+    <p class="text-sm leading-6 text-white">
+      <a href="#"><strong class="font-semibold">{{ block.settings.link_label }}&nbsp;<span aria-hidden="true">&rarr;</span></strong></a>
+    </p>
+  </div>
+{% endfor %}
+
 {% schema %}
   {
     "name": "t:sections.announcement-bar.name",
@@ -16,14 +30,23 @@
         "settings": [
           {
             "type": "text",
+            "id": "heading",
+            "label": "t:sections.announcement-bar.blocks.announcement.settings.heading.label"
+          },
+          {
+            "type": "text",
             "id": "text",
-            "default": "Welcome to our store",
             "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
           },
           {
+            "type": "text",
+            "id": "link_label",
+            "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label.label"
+          },
+          {
             "type": "url",
-            "id": "link",
-            "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+            "id": "link_url",
+            "label": "t:sections.announcement-bar.blocks.announcement.settings.link.url.label"
           }
         ]
       }
