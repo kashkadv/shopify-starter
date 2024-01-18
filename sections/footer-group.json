@@ -1,4 +1,6 @@
 {
   "name": "t:sections.header.name",
-  "type": "header"
+  "type": "header",
+  "sections": {},
+  "order": []
 }
