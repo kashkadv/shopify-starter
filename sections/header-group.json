@@ -8,7 +8,10 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store"
+            "heading": "Black Friday",
+            "text": "Save Up To 70%",
+            "link_label": "Shop Now",
+            "link_url": ""
           }
         }
       },
@@ -21,6 +24,7 @@
     "navbar": {
       "type": "navbar",
       "settings": {
+        "logo": "shopify:\/\/shop_images\/shopify-svgrepo-com.svg",
         "menu": "main-menu"
       }
     }

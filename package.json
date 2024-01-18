@@ -3,10 +3,12 @@
     "tailwindcss": "^3.4.1"
   },
   "scripts": {
-    "dev": "npx tailwindcss -i ./src/styles/main.scss -o ./assets/main.css -w",
     "watch": "npx tailwindcss -i ./src/styles/main.scss -o ./assets/main.css -w",
     "shopify": "shopify theme dev --live-reload hot-reload --open -e develop",
     "shopify-sync-mode": "shopify theme dev --live-reload hot-reload --verbose --theme-editor-sync --open -e develop-sync-mode",
-    "build": "npx tailwindcss -i ./src/styles/main.scss -o ./assets/main.css"
+    "build": "npx tailwindcss -i ./src/styles/main.scss -o ./assets/main.css",
+    
+    "dev": "shopify theme dev -e dev",
+    "pull-prod-content": "shopify theme pull -e prod-content --nodelete"
   }
 }
