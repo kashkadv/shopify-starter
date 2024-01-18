@@ -1,11 +1,26 @@
 {
   "sections": {
     "home-hero": {
-      "type": "home-hero"
+      "type": "home-hero",
+      "settings": {
+        "category": "Category name",
+        "subcategory": "Subcategory name",
+        "breadcrumbs_url": "",
+        "heading": "Heading",
+        "description": "Description",
+        "button": "Button",
+        "button_url": "",
+        "image": "shopify:\/\/shop_images\/zoom-vomero-5-mens-shoes-MgsTqZ.webp"
+      }
     },
     "featured-collection": {
-      "type": "featured-collection"
+      "type": "featured-collection",
+      "settings": {
+      }
     }
   },
-  "order": ["home-hero", "featured-collection"]
+  "order": [
+    "home-hero",
+    "featured-collection"
+  ]
 }
