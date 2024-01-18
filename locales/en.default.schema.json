@@ -48,6 +48,17 @@
     },
     "home-hero": {
       "name": "Home hero",
+      "settings": {
+        "category": {
+          "label": "Breadcrumbs category"
+        },
+        "subcategory": {
+          "label": "Breadcrumbs subcategory"
+        },
+        "breadcrumbs_url": {
+          "label": "Breadcrumbs url"
+        }
+      },
       "presets": {
         "name": "Home hero"
       }

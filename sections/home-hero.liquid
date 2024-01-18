@@ -16,7 +16,7 @@
         <div class="relative flex items-center gap-x-4 rounded-full px-4 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
           <span class="font-semibold text-neutral-600">{{ section.settings.category }}</span>
           <span class="h-4 w-px bg-gray-900/10" aria-hidden="true"></span>
-          <a href="{{ section.settings.category_url }}" class="flex items-center gap-x-1">
+          <a href="{{ section.settings.breadcrumbs_url }}" class="flex items-center gap-x-1">
             <span class="absolute inset-0" aria-hidden="true"></span>
             {{ section.settings.subcategory }}
             <svg class="-mr-2 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -51,32 +51,37 @@
       {
         "type": "text",
         "id": "category",
-        "label": "t:sections.announcement-bar.blocks.announcement.settings.heading.label"
+        "label": "t:sections.home-hero.settings.category.label",
+        "default": "Category name"
       },
       {
         "type": "text",
         "id": "subcategory",
-        "label": "t:sections.announcement-bar.blocks.announcement.settings.heading.label"
+        "label": "t:sections.home-hero.settings.subcategory.label",
+        "default": "Subcategory name"
       },
       {
         "type": "url",
-        "id": "category_url",
-        "label": "t:sections.announcement-bar.blocks.announcement.settings.heading.label"
+        "id": "breadcrumbs_url",
+        "label": "t:sections.home-hero.settings.breadcrumbs_url.label"
       },
       {
         "type": "text",
         "id": "heading",
-        "label": "t:sections.announcement-bar.blocks.announcement.settings.heading.label"
+        "label": "t:sections.announcement-bar.blocks.announcement.settings.heading.label",
+        "default": "Heading"
       },
       {
-        "type": "richtext",
+        "type": "textarea",
         "id": "description",
-        "label": "description"
+        "label": "description",
+        "default": "Description"
       },
       {
         "type": "text",
         "id": "button",
-        "label": "button label"
+        "label": "button label",
+        "default": "Button"
       },
       {
         "type": "url",
