@@ -2,4 +2,5 @@ tailwind.config.js
 package.json
 package-lock.json
 src
+config/settings_data.json
 assets/editor.css
