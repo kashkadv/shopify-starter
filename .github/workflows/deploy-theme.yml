@@ -21,9 +21,14 @@ jobs:
           bundler: "latest"
       - name: Install Shopify CLI
         run: npm install -g @shopify/cli @shopify/theme
+      - name: Pull Theme
+        env: 
+          SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
+          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+          SHOPIFY_CLI_TTY: 0
+        run: shopify theme pull --nodelete --theme ${{ secrets.SHOPIFY_FLAG_THEME_ID }}
       - name: Deploy
         env:
-          # Store URL, like your-store.myshopify.com
           SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
           SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
           SHOPIFY_CLI_TTY: 0
