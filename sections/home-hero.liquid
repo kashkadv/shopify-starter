@@ -28,11 +28,15 @@
       <h1 class="mt-10 max-w-lg text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">{{ section.settings.heading }} </h1>
       <p class="mt-6 text-lg leading-8 text-gray-600">{{ section.settings.description }}</p>
       <div class="mt-10 flex items-center gap-x-6">
-        <a href="{{ section.settings.button_url }}" class="text-sm font-semibold leading-6 text-gray-900">{{ section.settings.button }} <span aria-hidden="true">→</span></a>
+        <a href="{{ section.settings.button_url }}" class="text-sm font-semibold leading-6 text-gray-900">{{ section.settings.button }}&nbsp;&nbsp;<span aria-hidden="true">→</span></a>
       </div>
     </div>
-    <div class="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow-0">
-      {{ section.settings.image | image_url: width:500 |  image_tag  }}
+    <div class="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
+      {% if section.settings.image %}        
+        {{ section.settings.image | image_url: width:500 |  image_tag  }}
+      {% else %}
+        {{ 'product-2' | placeholder_svg_tag: 'w-full' }}
+      {% endif %}
     </div>
   </div>
 </div>
