@@ -1,6 +1,9 @@
-name: Theme deploy
+name: Deploy production theme
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -26,4 +29,4 @@ jobs:
           SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
           SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
           SHOPIFY_CLI_TTY: 0
-        run: shopify theme push --allow-live --theme ${{ secrets.SHOPIFY_FLAG_THEME_ID }}
+        run: shopify theme push --allow-live --theme ${{ secrets.PRODUCTION_THEME_ID }}
