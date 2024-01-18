@@ -8,7 +8,10 @@
   },
   "sections": {
     "header": {
-      "name": "Header",
+      "name": "Header"
+    },
+    "navbar": {
+      "name": "Navbar",
       "settings": {
         "logo": {
           "label": "Logo"
@@ -18,6 +21,9 @@
     "announcement-bar": {
       "name": "Announcement bar",
       "settings": {},
+      "presets": {
+        "name": "Announcement bar"
+      },
       "blocks": {
         "announcement": {
           "name": "Announcement",
@@ -38,6 +44,18 @@
             }
           }
         }
+      }
+    },
+    "home-hero": {
+      "name": "Home hero",
+      "presets": {
+        "name": "Home hero"
+      }
+    },
+    "featured-collection": {
+      "name": "Featured collection",
+      "presets": {
+        "name": "Featured collection"
       }
     }
   }

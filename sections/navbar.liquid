@@ -14,7 +14,9 @@
   </div>
   <a href="/" class="-m-1.5 p-1.5">
     <span class="sr-only">{{ shop.name }}</span>
-    {{ section.settings.logo | image_url: height:50 |  image_tag  }}
+    {% if section.settings.logo != null %}
+      {{ section.settings.logo | image_url: height:50 |  image_tag  }}
+    {% endif %}
   </a>
   <div class="flex flex-1 justify-end">
     <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
@@ -34,10 +36,12 @@
           </svg>
         </button>
       </div>
-      <a href="#" class="-m-1.5 p-1.5">
-        <span class="sr-only">{{ shop.name }}</span>
-        {{ section.settings.logo | image_url: height:50 |  image_tag  }}
-      </a>
+      {% if section.settings.logo != blank %}
+        <a href="#" class="-m-1.5 p-1.5">
+          <span class="sr-only">{{ shop.name }}</span>
+          {{ section.settings.logo | image_url: height:50 |  image_tag  }}
+        </a>
+      {% endif %}
       <div class="flex flex-1 justify-end">
         <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
       </div>
@@ -52,7 +56,7 @@
 
 {% schema %}
 {
-  "name": "t:sections.header.name",
+  "name": "t:sections.navbar.name",
   "enabled_on": {
     "groups": ["header"]
   },
@@ -60,13 +64,13 @@
     {
       "type": "image_picker",
       "id": "logo",
-      "label": "t:sections.header.settings.logo.label"
+      "label": "t:sections.navbar.settings.logo.label"
     },
     {
       "type": "link_list",
       "id": "menu",
       "default": "main-menu",
-      "label": "t:sections.header.settings.menu.label"
+      "label": "t:sections.navbar.settings.menu.label"
     }
   ]
 }
