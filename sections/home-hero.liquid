@@ -1,25 +1,39 @@
-<div class="relative isolate overflow-hidden pt-14">
-  <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
-  <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-    <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-  </div>
-  <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-    <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-      <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
-        Announcing our next round of funding. <a href="#" class="font-semibold text-white"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+<div class="relative isolate">
+  <svg class="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]" aria-hidden="true">
+    <defs>
+      <pattern id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+        <path d="M100 200V.5M.5 .5H200" fill="none" />
+      </pattern>
+    </defs>
+    <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
+      <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0" />
+    </svg>
+    <rect width="100%" height="100%" stroke-width="0" fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)" />
+  </svg>
+  <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
+    <div class="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
+      <div class="flex">
+        <div class="relative flex items-center gap-x-4 rounded-full px-4 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+          <span class="font-semibold text-neutral-600">{{ section.settings.category }}</span>
+          <span class="h-4 w-px bg-gray-900/10" aria-hidden="true"></span>
+          <a href="{{ section.settings.category_url }}" class="flex items-center gap-x-1">
+            <span class="absolute inset-0" aria-hidden="true"></span>
+            {{ section.settings.subcategory }}
+            <svg class="-mr-2 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <h1 class="mt-10 max-w-lg text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">{{ section.settings.heading }} </h1>
+      <p class="mt-6 text-lg leading-8 text-gray-600">{{ section.settings.description }}</p>
+      <div class="mt-10 flex items-center gap-x-6">
+        <a href="{{ section.settings.button_url }}" class="text-sm font-semibold leading-6 text-gray-900">{{ section.settings.button }} <span aria-hidden="true">→</span></a>
       </div>
     </div>
-    <div class="text-center">
-      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">{{ settings.heading  }}</h1>
-      <p class="mt-6 text-lg leading-8 text-gray-300">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
-      <div class="mt-10 flex items-center justify-center gap-x-6">
-        <a href="#" class="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">Get started</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-white">Learn more <span aria-hidden="true">→</span></a>
-      </div>
+    <div class="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow-0">
+      {{ section.settings.image | image_url: width:500 |  image_tag  }}
     </div>
-  </div>
-  <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
-    <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
   </div>
 </div>
 
@@ -32,8 +46,43 @@
     "settings": [
       {
         "type": "text",
+        "id": "category",
+        "label": "t:sections.announcement-bar.blocks.announcement.settings.heading.label"
+      },
+      {
+        "type": "text",
+        "id": "subcategory",
+        "label": "t:sections.announcement-bar.blocks.announcement.settings.heading.label"
+      },
+      {
+        "type": "url",
+        "id": "category_url",
+        "label": "t:sections.announcement-bar.blocks.announcement.settings.heading.label"
+      },
+      {
+        "type": "text",
         "id": "heading",
         "label": "t:sections.announcement-bar.blocks.announcement.settings.heading.label"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "description"
+      },
+      {
+        "type": "text",
+        "id": "button",
+        "label": "button label"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "link"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "t:sections.all.image.label"
       }
     ],
     "templates": [

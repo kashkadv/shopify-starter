@@ -57,6 +57,11 @@
       "presets": {
         "name": "Featured collection"
       }
+    },
+    "all": {
+      "image": {
+        "label": "Image"
+      }
     }
   }
 }
