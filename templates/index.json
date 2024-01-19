@@ -6,21 +6,22 @@
         "category": "Men`s shoes",
         "subcategory": "Running",
         "breadcrumbs_url": "",
-        "heading": "Carve a new lane for yourself",
+        "heading": "Carve a new lane for yourself.",
         "description": "The richly layered design includes textiles, leather and plastic accents that come together to make one of the coolest sneakers of the season.",
         "button": "Shop Now",
         "button_url": "",
         "image": "shopify:\/\/shop_images\/zoom-vomero-5-mens-shoes-trabsparent-bg.png"
       }
     },
-    "featured-collection": {
+    "featured_collection_ygAMWb": {
       "type": "featured-collection",
       "settings": {
+        "collection": "frontpage"
       }
     }
   },
   "order": [
     "home-hero",
-    "featured-collection"
+    "featured_collection_ygAMWb"
   ]
 }

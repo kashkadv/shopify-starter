@@ -1,6 +1,15 @@
 {
   "name": "t:sections.header.name",
   "type": "header",
-  "sections": {},
-  "order": []
+  "sections": {
+    "footer-navbar": {
+      "type": "footer-navbar",
+      "settings": {
+        "menu": "header-navbar"
+      }
+    }
+  },
+  "order": [
+    "footer-navbar"
+  ]
 }
