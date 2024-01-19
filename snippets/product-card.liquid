@@ -1,0 +1,12 @@
+<div class="group relative">
+  <div class="h-56 w-full overflow-hidden bg-gray-200 group-hover:opacity-75 lg:h-72 xl:h-80">
+    {{ product.featured_image | image_url: width: 600 | image_tag: class: 'h-full w-full object-cover object-center', loading: 'lazy' }}
+  </div>
+  <h3 class="mt-4 text-sm text-gray-700">
+    <a href={{ product.url }}>
+      <span class="absolute inset-0"></span>
+      {{ product.title }}
+    </a>
+  </h3>
+  <p class="mt-1 text-sm font-medium text-gray-900">{{ product.price | money_without_trailing_zeros }}</p>
+</div>

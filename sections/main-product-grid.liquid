@@ -1,0 +1,35 @@
+<div class="bg-white">
+  {% if collection.products != blank%}
+    {% paginate collection.products by section.settings.products_per_page %}
+      <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4 xl:gap-x-8">
+          {% for product in collection.products %}
+            {% render 'product-card' with product: product %}
+          {% endfor %}
+        </div>
+        {% if paginate.parts.size > 0 %}
+          {% render 'pagination' with paginate: paginate %}
+        {% endif %}
+      </div>
+    {% endpaginate %}
+  {% else %}
+    No products message
+  {% endif %}  
+</div>
+
+{% schema %}
+{
+  "name": "Product grid (main)",
+  "settings": [
+    {
+      "id": "products_per_page",
+      "label": "Products per page",
+      "type": "range",
+      "step": 1,
+      "min": 1,
+      "max": 50,
+      "default": 1
+    }
+  ]
+}
+{% endschema %}
