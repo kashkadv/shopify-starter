@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor_GVhehJ": {
+          "type": "vendor",
+          "settings": {
+            "text": "{{ product.vendor }}"
+          }
+        },
+        "product_title_KXGUGm": {
+          "type": "product_title",
+          "settings": {
+            "tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "vendor_GVhehJ",
+        "product_title_KXGUGm"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

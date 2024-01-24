@@ -1,0 +1,88 @@
+
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'vendor' %}
+      {{ block.settings.text }}
+    {% else %}
+    {% when 'product_title' %}
+      <{{ block.settings.tag }}>{{ product.title }}</{{ block.settings.tag }}>
+    {% else %}
+  {% endcase %}
+{% endfor %}
+
+
+
+{{ product.variants | json }}
+<br/>
+<br/>
+<br/>
+<br/>
+{{ product.selected_variant | json }}
+<br/>
+<br/>
+<br/>
+<br/>
+{{ product.options | json }}
+<br/>
+<br/>
+<br/>
+<br/>
+{{ product.options_by_name['Size'] | json }}
+<br/>
+<br/>
+<br/>
+<br/>
+{{ product.options_with_values | json }}
+
+{% schema %}
+{
+  "name": "main-product",
+  "blocks": [
+      {
+          "name": "Vendor",
+          "type": "vendor",
+          "settings": [
+            {
+              "type": "inline_richtext",
+              "id": "text",
+              "default": "Text block",
+              "label": "Text label"
+            }
+          ]
+        },
+    {
+      "name": "Product title",
+      "type": "product_title",
+      "settings": [
+        {
+          "type": "select",
+          "id": "tag",
+          "label": "Heading tag",
+          "options": [
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            }
+          ],
+          "default": "h1"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    
+  ]
+}
+{% endschema %}
