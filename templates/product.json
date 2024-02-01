@@ -3,24 +3,30 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor_GVhehJ": {
-          "type": "vendor",
+        "variant_picker_JWptnH": {
+          "type": "variant_picker",
           "settings": {
-            "text": "{{ product.vendor }}"
-          }
-        },
-        "product_title_KXGUGm": {
-          "type": "product_title",
-          "settings": {
-            "tag": "h1"
+            "picker_type": "dropdown"
           }
         }
       },
       "block_order": [
-        "vendor_GVhehJ",
-        "product_title_KXGUGm"
+        "variant_picker_JWptnH"
       ],
       "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
