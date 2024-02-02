@@ -20,7 +20,7 @@
 
         <div class="mt-10">
           <h3 class="text-sm font-medium text-gray-900 mb-2">{{ option.name }}</h3>
-          <fieldset class="grid grid-cols-3 gap-4 sm:grid-cols-8 lg:grid-cols-3">
+          <fieldset class="product-form__input grid grid-cols-3 gap-4 sm:grid-cols-8 lg:grid-cols-3">
             {% for value in option.values %}
 
               {%- liquid
@@ -44,9 +44,9 @@
               -%}
               
               <label class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 cursor-pointer bg-white text-gray-900 shadow-sm">
-                <input {% if option_disabled == true %}disabled{% endif %} type="radio" name="{{ option.name }}" value="{{ value |  escape }}" class="sr-only peer" {% if value == option.selected_value %}checked{% endif %} aria-labelledby="size-choice-1-label">
-                <span class="peer-disabled:line-through peer-disabled:opacity-50" id="{{ option.name }}-{{ forloop.index }}">{{ value }}</span>
-                <span class="pointer-events-none absolute -inset-px rounded-md peer-disabled:bg-neutral-500/10 peer-disabled:border-none peer-checked:border-neutral-500/50 peer-checked:border" aria-hidden="true"></span>
+                <input type="radio" name="{{ option.name }}" value="{{ value |  escape }}" class="sr-only peer {% if option_disabled == true %}disabled{% endif %}" {% if value == option.selected_value %}checked{% endif %} aria-labelledby="size-choice-1-label">
+                <span class="peer-[.disabled]:line-through peer-[.disabled]:opacity-50" id="{{ option.name }}-{{ forloop.index }}">{{ value }}</span>
+                <span class="pointer-events-none absolute -inset-px rounded-md peer-[.disabled]:bg-neutral-500/10 peer-checked:border-neutral-500/50 peer-checked:border" aria-hidden="true"></span>
               </label>
             {% endfor %}
           </fieldset>
@@ -56,8 +56,6 @@
   
     <script type="application/json">
     {{ product.variants | json }}
-    </script>  
-    
-    <button type="submit" class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add to bag</button>
+    </script>    
   </variant-selects>
 </form>

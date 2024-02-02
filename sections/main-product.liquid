@@ -1,7 +1,5 @@
 {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
-{{ product_form_id }}
-
 <div class="bg-white">
   <div class="pt-6">
     <nav aria-label="Breadcrumb">
@@ -34,25 +32,25 @@
     <!-- Product info -->
     <div class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
       <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-        <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{{ product.title }}</h1>
-      </div>
+        Gallery
+        </div>
+        
+        <!-- Options -->
+        <div class="mt-4 lg:row-span-3 lg:mt-0">
 
-      <!-- Options -->
-      <div class="mt-4 lg:row-span-3 lg:mt-0">
+        <h1 class="text-2xl font-bold tracking-tight mb-4 text-gray-900 sm:text-3xl">{{ product.title }}</h1>
         <h2 class="sr-only">Product information</h2>
-        <p class="text-3xl tracking-tight text-gray-900">{{ product.price | money_without_trailing_zeros  }} </p>
+
+        <div id="price-{{ section.id }}">
+          <p class="text-3xl tracking-tight text-gray-900">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</p>
+        </div>
+
+        <div class="my-8 tracking-wider">
+          {{ product.description }}
+        </div>
 
         {% render 'product-variants-picker' product_form_id: product_form_id %}
-
-        Buttons
-        
-        {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
-
-        Buttons
-      </div>
-
-      <div class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
-        {{ product.description }}
+        {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: false %}
       </div>
     </div>
   </div>
