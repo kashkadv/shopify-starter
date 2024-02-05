@@ -7,3 +7,12 @@
     @apply bg-slate-50 text-neutral-900;
   }
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
