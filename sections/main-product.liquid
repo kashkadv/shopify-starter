@@ -1,0 +1,107 @@
+{%- assign product_form_id = 'product-form-' | append: section.id -%}
+
+<div class="bg-white">
+  <div class="pt-6">
+    
+    <!-- Product info -->
+    <div class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
+      <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+        Gallery
+      </div>
+      
+      <!-- Options -->
+      <div class="mt-4 lg:row-span-3 lg:mt-0">
+        <h1 class="text-2xl font-bold tracking-tight mb-4 text-gray-900 sm:text-3xl">{{ product.title }}</h1>
+        <h2 class="sr-only">Product information</h2>
+
+        <div id="price-{{ section.id }}">
+          <p class="text-3xl tracking-tight text-gray-900">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</p>
+        </div>
+
+        <div class="my-8 tracking-wider">
+          {{ product.description }}
+        </div>
+
+        {% render 'product-variants-picker' product_form_id: product_form_id %}
+        {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: false %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "main-product",
+  "blocks": [
+    {
+        "name": "Vendor",
+        "type": "vendor",
+        "settings": [
+          {
+            "type": "inline_richtext",
+            "id": "text",
+            "default": "Text block",
+            "label": "Text label"
+          }
+        ]
+      },
+    {
+      "name": "Product title",
+      "type": "product_title",
+      "settings": [
+        {
+          "type": "select",
+          "id": "tag",
+          "label": "Heading tag",
+          "options": [
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            }
+          ],
+          "default": "h1"
+        }
+      ]
+    },
+    {
+      "type": "variant_picker",
+      "name": "t:sections.main-product.blocks.variant_picker.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "picker_type",
+          "options": [
+            {
+              "value": "dropdown",
+              "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__1.label"
+            },
+            {
+              "value": "button",
+              "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__2.label"
+            }
+          ],
+          "default": "button",
+          "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    
+  ]
+}
+{% endschema %}

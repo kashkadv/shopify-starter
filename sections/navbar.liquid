@@ -2,7 +2,17 @@
   <div class="flex flex-1">
     <div class="hidden lg:flex lg:gap-x-12">
     {% for link in linklists[section.settings.menu].links %}
-      <a href={{ link.url }} class="text-sm font-semibold leading-6 text-gray-900{% if link.active %} underline{% endif %}">{{ link.title }}</a>
+      <div class="block relative text-sm font-semibold leading-6 text-gray-900 group">
+        <a href="{{ link.url }}" class="{% if link.active %} underline{% endif %}"> {{ link.title }}</a>
+
+        {% unless link.levels == 0 %}
+          <div class="absolute w-max min-w-1/2 flex-col -left-4 p-4 bg-white gap-2 hidden group-hover:flex hover:flex shadow-lg rounded-sm">
+            {% for sublink in link.links %}
+              <a href="{{ sublink.url }}" class="block">{{ sublink.title }}</a>
+            {% endfor %}
+          </div>
+        {% endunless %}        
+      </div>
     {% endfor %}
     </div>
     <div class="flex lg:hidden">
@@ -19,7 +29,10 @@
     {% endif %}
   </a>
   <div class="flex flex-1 justify-end">
-    <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+    <button class="flex items-center relative text-sm font-semibold leading-6 text-gray-900 w-12 h-12" data-action="toggle-cart">
+      {% render 'icon-cart'  %}
+      <label id="cart-label" class="absolute top-0 right-0 rounded-full bg-neutral-900 text-white w-5 h-5 flex justify-center text-xs items-center">{{ cart.item_count }}</label>
+    </button>
   </div>
 </nav>
 <!-- Mobile menu, show/hide based on menu open state. -->
@@ -48,7 +61,15 @@
     </div>
     <div class="mt-6 space-y-2">
       {% for link in linklists[section.settings.menu].links %}
-        <a href={{ link.url }} class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50{% if link.active %} underline{% endif %}">{{ link.title }}</a>
+        <a href={{ link.url }} class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50{% if link.active %} underline{% endif %}">
+          123{{ link.title }} 123
+
+          {{ link | json }}
+
+          {% unless link.levels == 0 %}
+            has submenus
+          {% endunless %}
+        </a>
       {% endfor %}
     </div>
   </div>
@@ -69,7 +90,6 @@
     {
       "type": "link_list",
       "id": "menu",
-      "default": "main-menu",
       "label": "t:sections.navbar.settings.menu.label"
     }
   ]

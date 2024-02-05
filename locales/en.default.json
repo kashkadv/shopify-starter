@@ -7,5 +7,11 @@
         "share_on_pinterest": "Share on Pinterest"
       }
     }
+  },
+  "products": {
+    "product": {
+      "sold_out": "Sold out",
+      "add_to_cart": "Add to cart"
+    }
   }
 }

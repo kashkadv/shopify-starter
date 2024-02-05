@@ -5,9 +5,14 @@
       "settings": {
         "products_per_page": 4
       }
+    },
+    "main-collection-header": {
+      "type": "main-collection-header",
+      "settings": {}
     }
   },
   "order": [
+    "main-collection-header",
     "main-product-grid"
   ]
 }

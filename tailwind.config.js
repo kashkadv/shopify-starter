@@ -6,5 +6,6 @@ module.exports = {
     "./snippets/*.liquid",
     "./sections/*.liquid",
   ],
+  plugins: [require("@tailwindcss/typography")],
   theme: {},
 }

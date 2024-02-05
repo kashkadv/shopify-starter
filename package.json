@@ -2,10 +2,13 @@
   "devDependencies": {
     "tailwindcss": "^3.4.1"
   },
-  "scripts": {    
+  "scripts": {
     "watch": "npx tailwindcss -i ./src/styles/main.scss -o ./assets/main.css -w",
-    "build": "npx tailwindcss -i ./src/styles/main.scss -o ./assets/main.css",    
+    "build": "npx tailwindcss -i ./src/styles/main.scss -o ./assets/main.css",
     "dev": "shopify theme dev -e dev --open --theme-editor-sync",
     "pull-prod-content": "shopify theme pull -e prod-content --nodelete"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.10"
   }
 }
