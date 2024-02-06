@@ -1,0 +1,5 @@
+<label class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-900 ">
+  <input type="radio" name="{{ option.name }}" value="{{ value |  escape }}" class="sr-only peer {% if option_disabled == true %}disabled{% endif %}" {% if value == option.selected_value %}checked{% endif %} aria-labelledby="size-choice-1-label">
+  <span id="color-choice-0-label" class="sr-only">Black</span>
+  <span aria-hidden="true" style="background-color: {{ color.color }};" class="h-8 w-8 rounded-full border peer-checked:ring peer-checked:ring-2 border-opacity-10 ring-offset-1 ring-neutral-500"></span>
+</label>

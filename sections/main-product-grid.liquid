@@ -1,4 +1,8 @@
-<div class="bg-white">
+{% if section.settings.show_filters == "show" %}
+  {% render "main-collection-filters" %}
+{% endif %}
+
+<div id="product-grid" class="bg-white">
   {% if collection.products != blank%}
     {% paginate collection.products by section.settings.products_per_page %}
       <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
@@ -29,6 +33,21 @@
       "min": 1,
       "max": 50,
       "default": 1
+    },
+    {
+      "id": "show_filters",
+      "label": "Show filters",
+      "type": "select",
+      "options": [
+        {
+          "value": "show",
+          "label": "Show"
+        }, 
+        {
+          "value": "hide",
+          "label": "Hide"
+        }
+      ]
     }
   ]
 }
