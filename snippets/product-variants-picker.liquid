@@ -53,14 +53,14 @@
                 {% if color_swatches %}
                   {% for color in shop.metaobjects.swatches.values %}
                     {% if color.key == value %}  
-                      {% render 'swatch-color' option: option, value: value, index: forloop.index, color: color %}
+                      {% render 'swatch-color' option: option, value: value, index: forloop.index, color: color, option_disabled: option_disabled %}
                     {% endif %}
                   {% endfor %}
                 {% else %}
-                  {% render 'swatch-default' option: option, value: value, index: forloop.index %}
+                  {% render 'swatch-default' option: option, value: value, index: forloop.index, option_disabled: option_disabled %}
                 {% endif %}                
               {% else %}  
-                {% render 'swatch-default' option: option, value: value, index: forloop.index %}
+                {% render 'swatch-default' option: option, value: value, index: forloop.index, option_disabled: option_disabled %}
               {% endif %}              
             {% endfor %}
           </fieldset>

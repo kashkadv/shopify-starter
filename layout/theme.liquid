@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Document</title>
 		{{content_for_header}}
-    
+
 		<script src="{{ 'bundle.min.js' | asset_url }}" defer="defer"></script>
 	
 		{{ 'main.css'  | asset_url | stylesheet_tag }}
@@ -13,7 +13,7 @@
 
 	</head>
 	<body>
-		<header>
+		<header class="relative z-10">
 			{% sections 'header-group' %}
 		</header>
 		<main id="main">{{content_for_layout}}</main>
