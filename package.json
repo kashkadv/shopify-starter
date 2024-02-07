@@ -1,14 +1,24 @@
 {
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "tailwindcss": "^3.4.1"
   },
   "scripts": {
-    "watch": "npx tailwindcss -i ./src/styles/main.scss -o ./assets/main.css -w",
-    "build": "npx tailwindcss -i ./src/styles/main.scss -o ./assets/main.css",
+    "build:gulp": "gulp build",
+    "watch:gulp": "gulp watch",
+    "build:tailwind": "npx tailwindcss -i ./src/styles/main.scss -o ./assets/main.css",
+    "watch:tailwind": "npx tailwindcss -i ./src/styles/main.scss -o ./assets/main.css -w",
+    "watch": "concurrently --kill-others \"npm run watch:tailwind\" \"npm run watch:gulp\"",
+    "build": "concurrently --kill-others \"npm run build:tailwind\" \"npm run build:gulp\"",
     "dev": "shopify theme dev -e dev --open --theme-editor-sync",
     "pull-prod-content": "shopify theme pull -e prod-content --nodelete"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.10"
+    "@tailwindcss/typography": "^0.5.10",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1"
   }
 }
