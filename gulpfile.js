@@ -20,5 +20,5 @@ function watchScripts() {
   return watch(srcScripts, gulp.series(bundleScripts))
 }
 
-exports.build = bundleScripts
 exports.watch = gulp.series(bundleScripts, watchScripts)
+exports.default = gulp.series(bundleScripts)
